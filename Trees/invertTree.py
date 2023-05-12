@@ -9,6 +9,12 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
+# Time Complexity: O(n), where (n) is the number of nodes
+# Space Complexity:
+    # Worst case: O(n), where (n) is the number of recursive calls that 
+    # need to be performed, per node.
+
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
         # base case
@@ -19,6 +25,8 @@ class Solution:
         tmp = root.left
         root.left = root.right
         root.right = tmp
+        
+        # also, to avoide the 'tmp' variable-> root.left, root.right = root.right, root.left
 
         self.invertTree(root.left)
         self.invertTree(root.right)
