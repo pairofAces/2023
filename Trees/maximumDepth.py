@@ -12,3 +12,11 @@ class TreeNode():
         self.left = left
         self.right = right
 
+# recursive solution
+class Solution:
+    def maxDepth(self, root: TreeNode):
+        # base case
+        if not root:
+            return
+        
+        return 1 + (max(self.maxDepth(self.left), self.maxDepth(self.right)))
