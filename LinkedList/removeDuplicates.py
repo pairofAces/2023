@@ -16,6 +16,15 @@ class LinkedList:
         self.value = value
         self.next = None
 
+# Time Complexity: O(n), where (n) is the number of nodes in the linkedList
+# Space Coomplexity: O(1), constant space.
+    # This is because the space usage doesn't depend on the size of the input.
+    # The function only uses a constant amount of extra space to store the "current"
+    # variable. 
+
+    # Regardless of the size of the linkedList, the amount of additional space
+    # used remains constant. 
+
 def removeDuplicatesFromLinkedList(linkedList):
     current = linkedList
     while current.next is not None:
