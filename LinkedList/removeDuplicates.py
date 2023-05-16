@@ -17,5 +17,24 @@ class LinkedList:
         self.next = None
 
 def removeDuplicatesFromLinkedList(linkedList):
-    pass
+    current = linkedList
+    while current.next is not None:
+        if current.value == current.next.value:
+            current.next = current.next.next
+        else:
+            current = current.next
+    return linkedList
 
+# test
+linked_list = LinkedList(1)
+linked_list.next = LinkedList(2)
+linked_list.next.next = LinkedList(2)
+linked_list.next.next.next = LinkedList(3)
+linked_list.next.next.next.next = LinkedList(3)
+linked_list.next.next.next.next.next = LinkedList(3)
+
+result = removeDuplicatesFromLinkedList(linked_list)
+
+while result is not None:
+    print(result.value)
+    result = result.next
