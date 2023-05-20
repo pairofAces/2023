@@ -37,3 +37,28 @@ class Solution2:
                 stack.append([node.right, depth + 1])
         
         return res
+    
+# BFS
+
+from collections import deque
+
+class Solution3:
+    def maxDepth(self, root: TreeNode):
+        q = deque()
+        
+        if root:
+            q.append(root)
+        
+        level = 0
+
+        while q:
+
+            for i in range(len(q)):
+                node = q.popleft()
+                if node.left:
+                    q.append(node.left)
+                elif node.right:
+                    q.append(node.right)
+            level += 1
+            
+        return level
