@@ -13,7 +13,11 @@ class TreeNode():
         self.right = right
 
 # recursive solution
-    # Time Complexity:
+    # Time Complexity: O(n), where (n) is the number of nodes in the binary tree. Because we visit each node
+    #                  once during the recursion.
+
+    # Space Complexity: O(h), where (h) is the height of the binary tree. This is because, in the worst
+    #                   case, the height of the tree becomes equal to the number of nodes in the tree.
 class Solution:
     def maxDepth(self, root: TreeNode):
         # base case
@@ -24,6 +28,13 @@ class Solution:
 
 
 # DFS - Iterative
+    # Time Complexity: O(n), where (n) is the number of nodes in the binary tree
+    
+    # Space Complexity: O(n), where (n) is the number of nodes in the tree. This is because
+    #                   in the worst case, the stack can contain all nodes on one side of the
+    #                   tree, resulting in a skewed tree.
+
+    # In this solution, a stack (implemented as a linked list) is used.
 class Solution2:
     def maxDepth(self, root:TreeNode):
         stack = [[root, 1]]
@@ -43,6 +54,15 @@ class Solution2:
 
 from collections import deque
 
+    # Time Complexity: O(n), where (n) is the number of nodes in the tree
+    
+    # Space Complexity: O(n), where (n) is the number of nodes in the tree. This is because
+    #                   in the worst case, the maximum number of nodes in the queue during the 
+    #                   BFS traversal will be equal to the number of nodes in the tree. This is due
+    #                   to a completely unbalanced tree, which resembles a linked list, and occurs if
+    #                   each node only has a right child or a left child.
+
+    # In this solution, a queue (implemented as a deque) is used.
 class Solution3:
     def maxDepth(self, root: TreeNode):
         q = deque()
