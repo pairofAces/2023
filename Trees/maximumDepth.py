@@ -13,13 +13,14 @@ class TreeNode():
         self.right = right
 
 # recursive solution
+    # Time Complexity:
 class Solution:
     def maxDepth(self, root: TreeNode):
         # base case
         if not root:
             return
         
-        return 1 + (max(self.maxDepth(self.left), self.maxDepth(self.right)))
+        return 1 + (max(self.maxDepth(root.left), self.maxDepth(root.right)))
 
 
 # DFS - Iterative
@@ -60,5 +61,5 @@ class Solution3:
                 elif node.right:
                     q.append(node.right)
             level += 1
-            
+
         return level
