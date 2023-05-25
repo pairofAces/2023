@@ -13,6 +13,15 @@
 # input: s = "rat", t = "car"
 # output: false
 
+
+# Time Complexity: O(n), where (n) is the size of the input strings. This is due to the
+#                  code containing a loop that iterates over the entire length of the strings.
+
+# Space Complexity: O(n), where (n) is the amount of unique characters in the dictionaries that were created. This
+#                   is because the dictionaries (countS) and (countT) are used to store the
+#                   character counts of strings (s) and (t). Since we can assume both strings
+#                   are of equal length, the number of unique characters in the dicitonaries
+#                   is limited to the length of the strings, in the worst case.
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         # check base scenario if the lengths of both strings are different
@@ -30,6 +39,7 @@ class Solution:
             # increment the occurance of the current character in (t)
             countT[t[i]] = 1 + countT.get(t[i], 0)
         
+        # Check if the dictionaries storing the character count are equal
         return countS == countT
 
 # Testing
