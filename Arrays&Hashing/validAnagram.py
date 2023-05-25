@@ -15,16 +15,19 @@
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # check base scenario if the lengths of both strings are equal
+        # check base scenario if the lengths of both strings are different
         if len(s) is not len(t):
             return False
         
-        # create two dicitonaries for each input string
+        # initialize two dicitonaries for each input string
         countS, countT = {}, {}
 
         # iterate over the (s) input string
         for i in range(len(s)):
+            # increment the occurance of the current character in (s)
             countS[s[i]] = 1 + countS.get(s[i], 0)
+
+            # increment the occurance of the current character in (t)
             countT[t[i]] = 1 + countT.get(t[i], 0)
         
         return countS == countT
