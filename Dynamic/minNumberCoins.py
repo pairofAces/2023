@@ -9,6 +9,6 @@ def minNumberOfCoinsForChange(n, denoms):
             if denom <= amount:
                 numOfCoins[amount] = min(numOfCoins[amount], 1 + numOfCoins[amount - denom])
     
-    return numOfCoins[n]
+    return numOfCoins[n] if numOfCoins[n] is not float('inf') else -1
 
 
