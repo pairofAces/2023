@@ -12,4 +12,4 @@ with constant space.
 '''
 
 class MinMaxStack():
-    
+    pass
