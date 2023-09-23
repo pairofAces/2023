@@ -12,4 +12,17 @@ with constant space.
 '''
 
 class MinMaxStack():
-    pass
+    def peek(self):
+        pass
+
+    def pop(self):
+        pass
+
+    def push(self, num):
+        pass
+
+    def getMin(self):
+        pass
+
+    def getMax(self):
+        pass
