@@ -12,15 +12,32 @@ with constant space.
 '''
 
 class MinMaxStack():
+    # initialize the class
+    def __init__(self):
+        self.minMaxStack = []
+        self.stack = []
+
+    # This is required to be O(1) time | O(1) space
+    # This function will provide the topmost value of the stack
     def peek(self):
-        pass
+        return self.stack[len(self.stack) - 1]  # Note - how a stack works
 
+    # This is required to be O(1) time | O(1) space
     def pop(self):
-        pass
+        self.minMaxStack.pop()
+        return self.stack.pop()
 
+    # This is required to be O(1) time | O(1) space
     def push(self, num):
-        pass
-
+        newMinMax = {"min": num, "max": num}
+        if len(self.minMaxStack):
+            lastMinMax = self.minMaxStack[len(self.minMaxStack) - 1]
+            newMinMax["min"] = min(lastMinMax["min"], num)
+            newMinMax["max"] = max(lastMinMax["max"], num)
+        
+        self.minMaxStack.append(newMinMax)
+        self.stack.append(num)
+        
     def getMin(self):
         pass
 
